@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/module4_practise_orm</property>
+        <property name="hibernate.connection.username">codegym</property>
+        <property name="hibernate.connection.password">codegym</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="show_sql">true</property>
+        <!--        TODO:
+                            "show_sql" cho phép các câu SQL mà
+                            Hibernate sử dụng sẽ được log ra
+                            logstream của hệ thống để
+                            lập trình viên dễ dàng biết được
+                             câu lệnh nào đang được gọi đến database
+        -->
+        <property name="hbm2ddl.auto">update</property>
+        <!--TODO:
+                "hbm2ddl.auto" gợi ý rằng khi database không có
+                table, hay các table trong database cũ hơn so
+                với mô tả tại entity class, hibernate sẽ tiến hành
+                tự động update cấu trúc các table này.
+               Chú ý: Lập trình viên cần cân nhắc kĩ trước khi sử dụng tính năng này.
+
+        -->
+        <mapping class="vn.codegym.model.Customer"/>
+    </session-factory>
+</hibernate-configuration>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/beans ">
+
+</beans>

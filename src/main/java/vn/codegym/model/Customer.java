@@ -17,7 +17,6 @@ public class Customer {
             sẽ tự tăng trong database (auto_increment).
     * */
     private int id;
-
     private String name;
     private String email;
     private String address;
